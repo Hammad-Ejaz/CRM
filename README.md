@@ -1,5 +1,6 @@
 Project Title: CRM
-Project Name:The main aim of this application is to streamline the process of communication between company 
+Project Name:CRM for Real Estate
+project description:The main aim of this application is to streamline the process of communication between company 
 and the buyer. The application helps the buyer to find the real estate of his interest in very short 
 period of time and at a very good price. Application keeps the track of the communication between 
 buyer and the seller. Software roles is that it keeps the all details of the property (like a person 
