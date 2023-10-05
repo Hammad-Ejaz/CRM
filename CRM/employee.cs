@@ -8,48 +8,27 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace CRM
 {
-    public partial class Clientscs : Form
+    public partial class employee : Form
     {
-        public Clientscs()
+        public employee()
         {
             InitializeComponent();
-            string constr = @"Data Source=DESKTOP-2EKNDJ5\SQLEXPRESS;Initial Catalog=SE LAB;Integrated Security=True";
-            using (SqlConnection con = new SqlConnection(constr))
-            {
-                using (SqlDataAdapter sda = new SqlDataAdapter("SELECT client_id FROM clients", con))
-                {
-                    //Fill the DataTable with records from Table.
-                    DataTable dt = new DataTable();
-                    sda.Fill(dt);
-
-                    //Insert the Default Item to DataTable.
-                    DataRow row = dt.NewRow();
-                    //row[0] = 0;
-                    //row[0] = "Please select";
-                    dt.Rows.InsertAt(row, 0);
-
-                    //Assign DataTable as DataSource.
-                    comboBox1.DataSource = dt;
-                    comboBox1.DisplayMember = "client_id";
-                    comboBox1.ValueMember = "client_id";
-                }
-            }
         }
+
         private void button1_Click(object sender, EventArgs e)
         {
-
-            if (textBox1.Text != "" && textBox2.Text != "" && textBox3.Text != "" && textBox4.Text != "")
+            if (textBox1.Text != "" && textBox2.Text != "" && textBox3.Text != "" && textBox4.Text != "" && textBox5.Text != "")
             {
                 var con = Configuration.getInstance().getConnection();
-                SqlCommand cmd = new SqlCommand("INSERT INTO[clients](email,name,phone_number,notes)VALUES(@email,@name,@phone_number,@notes)", con);
+                SqlCommand cmd = new SqlCommand("INSERT INTO[employees](email,name,phone_number,role,password)VALUES(@email,@name,@phone_number,@role,@password)", con);
                 cmd.Parameters.AddWithValue("@name", textBox1.Text);
                 cmd.Parameters.AddWithValue("@email", textBox2.Text);
                 cmd.Parameters.AddWithValue("@phone_number", textBox3.Text);
-                cmd.Parameters.AddWithValue("@notes", textBox4.Text);
+                cmd.Parameters.AddWithValue("@role", textBox4.Text);
+                cmd.Parameters.AddWithValue("@password", textBox5.Text);
 
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Successfully saved");
@@ -64,9 +43,9 @@ namespace CRM
         private void button2_Click(object sender, EventArgs e)
         {
             var Con = Configuration.getInstance().getConnection();
-            if (textBox1.Text != "" && textBox2.Text != "" && textBox3.Text != "" && textBox4.Text != "")
+            if (textBox1.Text != "" && textBox2.Text != "" && textBox3.Text != "" && textBox4.Text != "" && textBox5.Text != "")
             {
-                string query = "update [clients] set name='" + textBox1.Text + "',phone_number='" + textBox3.Text + "',email='" + textBox2.Text + "',notes ='" + textBox4.Text + "' where client_id='" + comboBox1.SelectedValue + "'";
+                string query = "update [employees] set name='" + textBox1.Text + "',phone_number='" + textBox3.Text + "',email='" + textBox2.Text + "',role ='" + textBox4.Text + "',password='" + textBox5.Text + "' where employee_id='" + comboBox1.SelectedValue + "'";
                 SqlCommand q1 = new SqlCommand(query, Con);
                 q1.ExecuteNonQuery();
                 MessageBox.Show("Update Successfully");
@@ -80,7 +59,7 @@ namespace CRM
             var Con = Configuration.getInstance().getConnection();
 
 
-            string query = "delete [clients] where client_id='" + comboBox1.SelectedValue + "'";
+            string query = "delete [employees] where employee_id='" + comboBox1.SelectedValue + "'";
             SqlCommand q1 = new SqlCommand(query, Con);
             q1.ExecuteNonQuery();
             MessageBox.Show("Deleted Successfully");
@@ -90,12 +69,10 @@ namespace CRM
         private void button4_Click(object sender, EventArgs e)
         {
             String ConnectionStr = @"Data Source=DESKTOP-2EKNDJ5\SQLEXPRESS;Initial Catalog=SE LAB;Integrated Security=True";
-
             using (SqlConnection con = new SqlConnection(ConnectionStr))
             {
-                using (SqlCommand cmd = new SqlCommand("Select * from clients", con))
+                using (SqlCommand cmd = new SqlCommand("Select * from employees", con))
                 {
-
                     SqlDataAdapter da = new SqlDataAdapter(cmd);
                     DataTable dt = new DataTable();
                     da.Fill(dt);
@@ -105,9 +82,11 @@ namespace CRM
             }
         }
 
-        private void Clientscs_Load(object sender, EventArgs e)
+        private void button5_Click(object sender, EventArgs e)
         {
-
+            // Mainform form = new Mainform();
+            // this.Hide();
+            //Mainform.show();
         }
     }
 }
