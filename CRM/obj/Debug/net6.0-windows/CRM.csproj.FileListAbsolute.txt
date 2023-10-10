@@ -110,3 +110,5 @@ D:\semester 5\SE\LAB\developer\CRM\CRM\obj\Debug\net6.0-windows\ref\CRM.dll
 D:\semester 5\SE\LAB\developer\CRM\CRM\obj\Debug\net6.0-windows\CRM.Clientscs.resources
 D:\semester 5\SE\LAB\developer\CRM\CRM\obj\Debug\net6.0-windows\CRM.Sale.resources
 D:\semester 5\SE\LAB\developer\CRM\CRM\obj\Debug\net6.0-windows\CRM.Property.resources
+D:\semester 5\SE\LAB\developer\CRM\CRM\obj\Debug\net6.0-windows\CRM.employee.resources
+D:\semester 5\SE\LAB\developer\CRM\CRM\obj\Debug\net6.0-windows\CRM.lead.resources
