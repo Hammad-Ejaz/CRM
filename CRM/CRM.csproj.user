@@ -16,5 +16,8 @@
     <Compile Update="SIgnUp.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Task.cs">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
 </Project>
