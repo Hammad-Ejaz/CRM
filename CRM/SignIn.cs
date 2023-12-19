@@ -38,6 +38,10 @@ namespace CRM
                     cmd.Parameters.AddWithValue("@password", textBox4.Text);
                     cmd.Parameters.AddWithValue("@age", int.Parse(textBox5.Text));
                     cmd.Parameters.AddWithValue("@role", textBox2.Text);
+                    if(textBox2.Text =="admin" || textBox2.Text == "Admin")
+                    {
+                        MessageBox.Show("You can't be admin");
+                    }
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Successfully saved");
 

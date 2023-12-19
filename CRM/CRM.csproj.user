@@ -13,6 +13,9 @@
     <Compile Update="lead.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="MainFormcs.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="meeting.cs">
       <SubType>Form</SubType>
     </Compile>

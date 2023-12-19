@@ -106,9 +106,9 @@ namespace CRM
 
         private void button5_Click(object sender, EventArgs e)
         {
-            // Mainform form = new Mainform();
-            // this.Hide();
-            //Mainform.show();
+            MainFormcs form = new MainFormcs();
+            this.Hide();
+            form.Show();
         }
     }
 }

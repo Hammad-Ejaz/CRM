@@ -331,6 +331,7 @@
             Controls.Add(tableLayoutPanel1);
             Name = "employee";
             Text = "employee";
+            Load += employee_Load;
             tableLayoutPanel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             tableLayoutPanel2.ResumeLayout(false);

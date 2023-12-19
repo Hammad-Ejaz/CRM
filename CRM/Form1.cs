@@ -21,7 +21,7 @@ namespace CRM
 
         private void button1_Click(object sender, EventArgs e)
         {
-            SignIn form = new SignIn();
+             SignIn form = new SignIn();
             this.Hide();
             form.Show();
         }

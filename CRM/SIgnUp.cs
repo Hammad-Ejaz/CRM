@@ -60,6 +60,9 @@ namespace CRM
                 if (credentialsMatch == true)
                 {
                     MessageBox.Show("LOGIN SUCCESFUL");
+                    MainFormcs form = new MainFormcs();
+                    this.Hide();
+                    form.Show();
                 }
                 else
                 {
